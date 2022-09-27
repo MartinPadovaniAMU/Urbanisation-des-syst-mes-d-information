@@ -1,1 +1,5 @@
 #Pipeline gitlab
+hello:
+    image: shell
+    script: 
+        - echo 'Hello!'
