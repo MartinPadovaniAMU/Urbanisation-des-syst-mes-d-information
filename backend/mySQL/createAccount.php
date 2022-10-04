@@ -21,4 +21,13 @@
         $statement = $GLOBALS["PDO"]->prepare($query);
         $exec = $statement->execute($data);
     }
+
+    function modify($login, $pass){
+        global $PDO;
+        $table = "Utilisateur";
+        $query = "UPDATE $table SET password = ? WHERE login = ?";
+        $data = array($pass, $login);
+        $statement = $GLOBALS["PDO"]->prepare($query);
+        $exec = $statement->execute($data);
+    }
 ?>
