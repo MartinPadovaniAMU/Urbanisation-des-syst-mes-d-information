@@ -1,11 +1,15 @@
 <?php
     require_once("dbconnect.php");
-    $l = "test";
+
+	error_reporting(E_ALL);
+	ini_set("display_errors", 1);
+
     function checkLogin($login){
+    	global $PDO; 
         $table = "Utilisateur";
         $query = "SELECT login FROM $table WHERE login=?";
         $data = array($login);
-        $statement = $PDO->prepare($query);
+        $statement = $GLOBALS["PDO"]->prepare($query);
         $exec = $statement->execute($data);
         $resultats = $statement->fetchAll( PDO::FETCH_ASSOC );
 
@@ -13,25 +17,14 @@
     }
 
     function verifPass($login, $pass){
+    	global $PDO;
         $table = "Utilisateur";
         $query = "SELECT login FROM $table WHERE password=? and login=?";
-        $data = array($password,$login);
-        $statement = $PDO->prepare($query);
+        $data = array($pass,$login);
+        $statement = $GLOBALS["PDO"]->prepare($query);
         $exec = $statement->execute($data);
         $resultats = $statement->fetchAll( PDO::FETCH_ASSOC );
-
+		
         return isset($resultats);
     }
-    if(checkLogin("test")){
-        if(verifPass("test","compte2")){
-            echo("Boule");
-        }
-        else{
-            echo("Echec de boule");
-        }
-    }
-    else{
-        echo("Echec de bill");
-    }
-
 ?>
