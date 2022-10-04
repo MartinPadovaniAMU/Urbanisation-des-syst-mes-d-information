@@ -1,11 +1,11 @@
 <?php
-    require_once(config.php);
+    require_once("config.php");
     
-    $host = "localhost";
-    $charset = "UTF-8";
-    $dsn = "mysql:host=" . $host ";" .
-        "dbname=" . $dbname . ";" .
-        "charset=" . $charset . ";";
+    
+    $charset = "utf8";
+    $dsn = "mysql:host=$host;" .
+        "dbname=$dbname;" .
+        "charset=$charset";
 
     $opt = array (
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -13,11 +13,12 @@
         PDO::ATTR_EMULATE_PREPARES => false );
 
     try{
-        PDO = new PDO($dsn, $dbuser, $dbpass, $opt);
-        echo("Connection succeed.");
+        #$PDO = new PDO($dsn, $dbuser, $dbpass, $opt);
+        $db = new PDO('mysql:host=raphael-bertrand-etu.pedaweb.univ-amu.fr;dbname=b18011881;charset=utf8', 'b18011881', 'rkgq77x16MePdI1');
+        echo("Connection succeed. \n");
     }
     catch (PDOException $e) {
-        print "Erreur vous êtes non connecté ! erreur en cours : " . $e->getMessage() . "";
+        print "Erreur vous êtes non connecté ! erreur en cours : " . $e->getMessage() . "\n";
         die();
     }
 ?>
