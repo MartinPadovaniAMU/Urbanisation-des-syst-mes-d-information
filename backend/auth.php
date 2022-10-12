@@ -12,21 +12,17 @@
         if($logged == true){
             return true;
         }
-        else{
-            if(isset($_POST["login"]) and isset($_POST["pass"])){
-                return authenticate();
-            }
-        }
         return false;
     }
 
-    //s'authentifier
-    function authenticate(){
+    //se connecter
+    function connect(){
         global $logged;
         chifrPass();
         if(checkPass($_POST["login"],$_POST["pass"])){
             $logged = true;
         }
+
         return $logged;
     }
 
