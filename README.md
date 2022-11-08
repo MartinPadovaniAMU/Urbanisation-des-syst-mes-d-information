@@ -1,6 +1,7 @@
 # Sécurité de système informatique
 
-
+Frontend : Martin Padovani
+Backend et BDD : Raphaël Bertrand
 
 ## Getting started
 
