@@ -1,0 +1,58 @@
+{
+	"services" : [
+    		{
+				"path" : "items",
+        		"nom": "YOUTUBE",
+                "origin" : "yt",
+        		"adresse" : "https://www.youtube.com/embed/",
+				"autoplay" : "yes",
+				"name" : ["snippet","title"],
+				"code" : ["id","videoId"],
+				"format_code" : "",
+				"miniature" : "https://i3.ytimg.com/vi/IDVID/maxresdefault.jpg",
+				"api" : "https://www.googleapis.com/youtube/v3/search?key=APIKEY&type=TYPE&part=snippet&maxResults=10&q=QUERY&order=ORDER",
+				"pkey" : ["yes","AIzaSyARUqfXAkKVHBJ-N_qVu5OdF9d00CjaeGw"],
+				"apiscore" : "https://www.googleapis.com/youtube/v3/videos?part=statistics&id=IDVID&key=APIKEY",
+				"score" : ["items",0,"statistics","viewCount"],
+				"snippet" : "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=IDVID&key=APIKEY",
+				"date" : ["items",0,"snippet","publishedAt"],
+				"titre": ["items",0,"snippet","title"]
+    		},
+            {
+				"path" : "list",
+        		"nom": "DAILYMOTION",
+                "origin" : "dm",
+        		"adresse" : "https://www.dailymotion.com/embed/video/",
+				"autoplay" : "yes",
+				"name" : ["title"],
+				"code" : ["id"],
+				"format_code" : "",
+				"miniature" : "https://www.dailymotion.com/thumbnail/video/IDVID",
+				"api" : "https://api.dailymotion.com/videos?tags=QUERY",
+				"pkey" : ["no"],
+				"apiscore" : "https://api.dailymotion.com/video/IDVID?fields=created_time%2Cviews_total%2Ctitle",
+				"score" : ["views_total"],
+				"snippet" : "https://api.dailymotion.com/video/IDVID?fields=created_time%2Cviews_total%2Ctitle",
+				"date" : ["created_time"],
+				"titre": ["title"]
+    		},
+            {
+				"path" : "data",
+            	"nom" : "VIMEO",
+                "origin" : "vm",
+                "adresse" : "https://player.vimeo.com/video/",
+				"autoplay" : "no",
+				"name" : ["name"],
+				"code" : ["uri"],
+				"format_code" : "/videos/",
+				"miniature" : "https://vumbnail.com/IDVID.jpg",
+				"api" : "https://api.vimeo.com/videos?query=QUERY&access_token=APIKEY",
+				"pkey" : ["yes","00af3e7eabc4f37f8e6fa269d6c3e12f"],
+				"apiscore" : "no",
+				"score" : ["unknown"],
+				"snippet" : "https://api.vimeo.com/videos?query=IDVID&access_token=APIKEY",
+				"date" : ["data",0,"release_time"],
+				"titre": ["data",0,"name"]
+            }
+     ]
+}
