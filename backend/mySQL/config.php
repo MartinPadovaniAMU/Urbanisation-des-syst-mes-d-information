@@ -1,6 +1,6 @@
 <?php
-    $dbname = 'b18011881';
-    $dbuser = 'b18011881';
-    $dbpass = 'rkgq77x16MePdI1';
-    $host = "mysql.pedaweb.univ-amu.fr";
+    $dbname = 'SQL Omnitube';
+    $dbuser = 'Rfael';
+    $dbpass = 'Rapho3Rapho3';
+    $host = "serveur-omnitube.database.windows.net";
 ?>
